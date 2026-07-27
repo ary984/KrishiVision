@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Arboretum - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#7f2448",
+              "surface-container-high": "#e6e9e8",
+              "on-tertiary-fixed": "#3f001c",
+              "surface-container": "#eceeed",
+              "primary-fixed": "#bcefc0",
+              "background": "#f8faf9",
+              "secondary-container": "#baee99",
+              "on-background": "#191c1c",
+              "surface-container-low": "#f2f4f3",
+              "tertiary-container": "#b14b6f",
+              "secondary-fixed-dim": "#a2d582",
+              "on-tertiary-container": "#ffedf0",
+              "outline": "#707a6c",
+              "tertiary-fixed": "#ffd9e2",
+              "tertiary": "#923357",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface-variant": "#40493d",
+              "on-primary": "#ffffff",
+              "on-primary-fixed": "#00210a",
+              "on-tertiary": "#ffffff",
+              "surface-container-highest": "#e1e3e2",
+              "on-secondary-fixed-variant": "#26500d",
+              "surface": "#f8faf9",
+              "surface-dim": "#d8dad9",
+              "secondary": "#3d6924",
+              "on-secondary-fixed": "#082100",
+              "inverse-on-surface": "#eff1f0",
+              "error": "#ba1a1a",
+              "on-primary-fixed-variant": "#22502d",
+              "on-secondary-container": "#416d28",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#191c1c",
+              "surface-bright": "#f8faf9",
+              "tertiary-fixed-dim": "#ffb1c7",
+              "secondary-fixed": "#bdf19c",
+              "on-error-container": "#93000a",
+              "surface-tint": "#3a6843",
+              "inverse-primary": "#a0d3a5",
+              "surface-variant": "#e1e3e2",
+              "primary": "#315f3b",
+              "primary-fixed-dim": "#a0d3a5",
+              "on-secondary": "#ffffff",
+              "primary-container": "#497851",
+              "on-primary-container": "#cafece",
+              "outline-variant": "#bfcaba",
+              "inverse-surface": "#2e3131"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 hidden md:flex flex-col bg-stone-100 dark:bg-stone-900 flex flex-col p-4 gap-2 fixed left-0 top-0 overflow-y-auto">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-black text-emerald-900 dark:text-emerald-50 font-headline uppercase tracking-wider">Digital Arboretum</h2>
+<p class="text-[10px] text-stone-500 font-bold uppercase tracking-[0.2em] mt-1">Field Intelligence</p>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="bg-white dark:bg-stone-800 text-emerald-700 dark:text-emerald-300 rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium transition-all duration-200 ease-in-out" href="./code.html">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium transition-all duration-200 ease-in-out" href="../scan_upload/code.html">
+<span class="material-symbols-outlined">center_focus_strong</span>
+                Scan
+            </a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium transition-all duration-200 ease-in-out" href="../history_page/code.html">
+<span class="material-symbols-outlined">history</span>
+                History
+            </a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">insights</span>
+                Insights
+            </a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 flex items-center gap-3 px-4 py-3 font-headline text-sm font-medium transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-low rounded-2xl flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a middle aged farmer with sun-weathered skin and a kind smile, wearing a denim shirt in a sunlit field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe-qfDUeTUTvEbCOLB2Q4dcjT3FjTTSOA_KNbKlrYhRnDa2M9hutt9hx9oUTbdA4AVZmncNckNFwkg4xex3BDg-ziPhUHkHtQwcDQHlXytnqNGMKeydRr2q7rXHB_mrVJaGPvmV4TO79pEeyfP1yrWdrhleqbB0_UCBGQD3sgSmiulI07YwXrXacGtMHmQTjfbRkBRnvk-bUrk_HbjhfQTsKpgWKUdPyfY2R0e3kC33FQN9w6v6KfYI706H14Jrqbkv04NE59yk-4"/>
+<div>
+<p class="text-sm font-bold font-headline text-on-surface">Farmer Joe</p>
+<p class="text-xs text-on-surface-variant">Field Lead</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-6 md:p-12 pb-32 md:pb-12 bg-surface">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface">Welcome Back, Farmer Joe</h1>
+<p class="text-on-surface-variant mt-2 text-lg font-body">Your crops are showing promising growth today. 4 areas require review.</p>
+</div>
+<a class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-headline font-bold flex items-center gap-3 shadow-[0_12px_40px_rgba(49,95,59,0.2)] hover:scale-[0.98] transition-transform active:duration-150" href="../scan_upload/code.html">
+<span class="material-symbols-outlined">photo_camera</span>
+                Start New Scan
+            </a>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="bg-surface-container-low p-8 rounded-3xl flex flex-col justify-between h-48 border-none">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+<div>
+<p class="text-display-sm font-headline font-extrabold text-3xl">1,284</p>
+<p class="text-label-md font-body text-on-surface-variant uppercase tracking-widest text-xs mt-1">Scans Done</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl flex flex-col justify-between h-48 border-none">
+<span class="material-symbols-outlined text-tertiary text-3xl">coronavirus</span>
+<div>
+<p class="text-display-sm font-headline font-extrabold text-3xl">12</p>
+<p class="text-label-md font-body text-on-surface-variant uppercase tracking-widest text-xs mt-1">Diseases Detected</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl flex flex-col justify-between h-48 border-none">
+<span class="material-symbols-outlined text-secondary text-3xl">potted_plant</span>
+<div>
+<p class="text-display-sm font-headline font-extrabold text-3xl">42</p>
+<p class="text-label-md font-body text-on-surface-variant uppercase tracking-widest text-xs mt-1">Crops Monitored</p>
+</div>
+</div>
+</section>
+<!-- Bento Layout: Insights & Recent Scans -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Recent Scans List -->
+<section class="lg:col-span-2">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-2xl font-headline font-bold text-on-surface">Recent Field Scans</h3>
+<a class="text-primary font-headline font-bold text-sm hover:underline" href="../history_page/code.html">View History</a>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Scan Item 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex items-center gap-6 shadow-sm border border-outline-variant/10 group hover:bg-surface-container-low transition-colors duration-300">
+<img class="w-20 h-20 rounded-xl object-cover" data-alt="extreme close up of a vibrant green leaf with early signs of orange rust spots under bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5mjicLj5UnZCx-puO4VqW9UH-kHiHSJJCmZ_lqaBPdSwQr6Ez2v3dSwbYSqx2xaQ7jnn5x9dfCCZCcDsK__-Erl7UKM859rLxPwUxRdQye4J4GtwBGG4c0tf6Ke54_ErpV88XEBWQ0pJNuTTN3nDu2xUcwX-t431yejcjAFA2BP9q6OXt1Sqkq0TjWwPG1B8jiM5_vJthIewA7p8ChFMuPmT3zgiqp5R7TV0F9Hdl-WQx5j2tG4E4BzEpXUKXOnAdfaJRLuDjFlo"/>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-lg text-on-surface">Main Wheat Field</h4>
+<p class="text-body-md text-on-surface-variant text-sm">North Quadrant • 2 hours ago</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Rust Detected</span>
+<span class="text-xs text-on-surface-variant font-medium">Action Required</span>
+</div>
+</div>
+<!-- Scan Item 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex items-center gap-6 shadow-sm border border-outline-variant/10 group hover:bg-surface-container-low transition-colors duration-300">
+<img class="w-20 h-20 rounded-xl object-cover" data-alt="healthy green organic lettuce growing in a straight row in dark rich soil with soft morning dew" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGbfHYi5NoAJP2WrQ1qMv8Z9lQPCcNbGb3cVa9OKJYhuJPYjMyCD9gjGkpgSZ7J6Ly_kOzFtoAvIpi5PeF6vdfDxxfy3ivWPjgyUnKqqEZEzKi306QkurWvbT-SUXaT478rbtJdwuMj8UJV_Xus9xenrENI_BK66CWuTEWDbiMDdQk-phaZvIYjPLfWnGrALElcEfLTy_lsVf5HaLG5x_IaRyBHOotrteW2qmQ_gnDXJpRiqlaOb0gKCSWicTLdb8a7wy2-ehI3W0"/>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-lg text-on-surface">Hydroponic Batch B</h4>
+<p class="text-body-md text-on-surface-variant text-sm">Greenhouse 02 • 5 hours ago</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Healthy</span>
+<span class="text-xs text-on-surface-variant font-medium">Optimal Growth</span>
+</div>
+</div>
+<!-- Scan Item 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex items-center gap-6 shadow-sm border border-outline-variant/10 group hover:bg-surface-container-low transition-colors duration-300">
+<img class="w-20 h-20 rounded-xl object-cover" data-alt="close up of a soybean plant leaf with slight yellowing around the edges on a sunny day" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyRiuAJFSbOa4BsiyAndXICFpbtPNvR0LSHWTcsdUGExZP1m0TeeSeNecjSOVqDbj4HScnNtgSd7fqJn18b6-31HL6mc4B253oaQl92r6iVHxwu3KkrwQTMN9Ehmqy34pArNwsj4qS8YrOUPK-CYO8IFwGF-ZEed63k83_JKUQWIvHcig2lkEUzwDyRNIhLtUWDaLLdFCwAVtQmc9ZZIbQtaw4ZX9tjEe2nIlNmw-ElJ3I2TJPVm934ZyU9iwL7JYSZA2zsMEJ83o"/>
+<div class="flex-1">
+<h4 class="font-headline font-bold text-lg text-on-surface">Soybean Section 4</h4>
+<p class="text-body-md text-on-surface-variant text-sm">East Ridge • Yesterday</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Warning</span>
+<span class="text-xs text-on-surface-variant font-medium">Nitrogen Deficit</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Side Insight Card -->
+<section class="lg:col-span-1">
+<div class="bg-surface-container-high p-8 rounded-3xl h-full flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h3 class="text-2xl font-headline font-bold text-on-surface leading-tight">Environmental Advisory</h3>
+<p class="text-on-surface-variant mt-3 leading-relaxed">High humidity expected for the next 48 hours. This may increase the spread of <strong class="text-primary">Wheat Rust</strong> in the North Quadrant.</p>
+</div>
+<div class="mt-auto relative z-10 bg-surface-container-lowest/50 backdrop-blur-md p-4 rounded-2xl">
+<div class="flex items-center gap-4 mb-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">wb_sunny</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest">Current Weather</p>
+<p class="font-headline font-bold text-on-surface text-lg">24°C • Humid</p>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-headline font-bold text-sm hover:bg-primary-container transition-colors">Apply Preventative Measure</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar Component (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 dark:bg-stone-950/90 backdrop-blur-lg flex justify-around items-center px-4 pt-2 pb-6 z-50 rounded-t-3xl shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-2xl px-5 py-2 scale-98 transition-transform" href="./code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-5 py-2 active:bg-stone-100 dark:active:bg-stone-800 transition-transform" href="../scan_upload/code.html">
+<span class="material-symbols-outlined">photo_camera</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-5 py-2 active:bg-stone-100 dark:active:bg-stone-800 transition-transform" href="../history_page/code.html">
+<span class="material-symbols-outlined">cloud_done</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-5 py-2 active:bg-stone-100 dark:active:bg-stone-800 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

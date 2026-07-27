@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Arboretum — Landing Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#F2F3F2",
+              surface: "#EDF0EC",
+              card: "#F6F7F5",
+              primary: "#A7C86E",
+              primaryDark: "#0A5A44",
+              textMain: "#101314",
+              textMuted: "#596060",
+              borderSoft: "#D8DEDA",
+              footer: "#E6E9E7",
+            },
+            fontFamily: {
+              headline: ["Manrope", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 16px 50px rgba(11, 22, 14, 0.08)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .font-headline { font-family: 'Manrope', sans-serif; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-textMain">
+    <div class="min-h-screen flex flex-col">
+      <header class="w-full bg-card border-b border-borderSoft">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primaryDark text-base">park</span>
+            <span class="font-headline font-semibold text-[24px] leading-none">Digital Arboretum</span>
+          </div>
+
+          <nav class="hidden md:flex items-center gap-8 text-sm text-textMuted">
+            <a class="text-primaryDark font-medium" href="#">Home</a>
+            <a class="hover:text-textMain transition-colors" href="#">Solutions</a>
+            <a class="hover:text-textMain transition-colors" href="#">Community</a>
+            <a class="hover:text-textMain transition-colors" href="#">Pricing</a>
+          </nav>
+
+          <div class="flex items-center gap-4 text-textMuted">
+            <span class="material-symbols-outlined text-[20px]">notifications</span>
+            <span class="material-symbols-outlined text-[20px]">account_circle</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1">
+        <section class="bg-surface">
+          <div class="max-w-[1200px] mx-auto px-4 md:px-8 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span class="inline-flex bg-primary text-textMain text-[11px] font-semibold tracking-[0.14em] uppercase px-4 py-1 rounded-full">
+                Precision Agriculture
+              </span>
+
+              <h1 class="font-headline text-[44px] md:text-[64px] leading-[1.02] font-extrabold mt-6 tracking-[-0.02em]">
+                Detect Crop<br />Diseases
+                <span class="text-primaryDark italic">Instantly</span><span class="font-semibold">with AI</span>
+              </h1>
+
+              <p class="text-textMuted text-lg leading-relaxed mt-6 max-w-[520px]">
+                Protect your harvest with our advanced neural networks. Simply take a photo and get expert diagnosis in seconds.
+              </p>
+
+              <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <button class="inline-flex items-center justify-center gap-2 bg-primary text-black font-medium px-6 py-3 rounded-xl shadow-soft hover:brightness-95 transition">
+                  <span class="material-symbols-outlined text-[18px]">upload</span>
+                  Upload Image
+                </button>
+                <button class="inline-flex items-center justify-center gap-2 bg-[#ECEEEC] border border-borderSoft text-black font-medium px-6 py-3 rounded-xl hover:bg-[#E3E6E2] transition">
+                  <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                  Try Demo
+                </button>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="rounded-[34px] bg-[#F7FAF7] border border-[#DCE1DD] p-4 shadow-soft">
+                <div class="rounded-[26px] overflow-hidden relative bg-[#1A2520] min-h-[420px]">
+                  <img
+                    class="absolute inset-0 w-full h-full object-cover"
+                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+                    alt="Crop field"
+                  />
+                  <div class="absolute top-5 right-5 bg-white/88 backdrop-blur px-4 py-3 rounded-2xl w-[260px]">
+                    <div class="flex items-center gap-2 text-[15px] font-semibold">
+                      <span class="material-symbols-outlined text-red-500 text-[19px]">warning</span>
+                      Pathogen Detected
+                    </div>
+                    <p class="text-sm text-textMuted mt-1">Blight Infection: 89% probability</p>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-background py-16 md:py-20 border-t border-borderSoft/70">
+          <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="font-headline font-extrabold text-[44px] md:text-[52px] tracking-[-0.02em]">Smart Diagnostic Engine</h2>
+              <p class="text-textMuted mt-4 text-lg">
+                Built by agronomists and data scientists to bring enterprise-grade insights to every acre.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <article class="bg-card rounded-3xl border border-borderSoft p-7">
+                <div class="w-11 h-11 rounded-xl bg-primary/85 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">biotech</span>
+                </div>
+                <h3 class="font-headline text-[30px] font-bold mt-6">Disease Detection</h3>
+                <p class="text-textMuted leading-relaxed mt-3">
+                  Our AI identifies over 150+ known pathogens, insects, and nutrient deficiencies with 98% accuracy.
+                </p>
+              </article>
+
+              <article class="bg-card rounded-3xl border border-borderSoft p-7">
+                <div class="w-11 h-11 rounded-xl bg-primary/85 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px]">bolt</span>
+                </div>
+                <h3 class="font-headline text-[30px] font-bold mt-6">Instant Diagnosis</h3>
+                <p class="text-textMuted leading-relaxed mt-3">
+                  No more waiting for lab results. Get comprehensive health reports directly on your mobile device in real-time.
+                </p>
+              </article>
+
+              <article class="bg-card rounded-3xl border border-borderSoft p-7">
+                <div class="w-11 h-11 rounded-xl bg-pink-200 flex items-center justify-center">
+                  <span class="material-symbols-outlined text-[20px] text-pink-800">checklist</span>
+                </div>
+                <h3 class="font-headline text-[30px] font-bold mt-6">Treatment Suggestions</h3>
+                <p class="text-textMuted leading-relaxed mt-3">
+                  Personalized recovery protocols including organic remedies and chemical interventions tailored to your region.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-background py-8 md:py-10">
+          <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+            <div class="bg-primary rounded-[34px] p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8">
+              <div class="flex-1">
+                <h2 class="font-headline text-white text-[42px] md:text-[50px] leading-tight font-extrabold tracking-[-0.02em]">
+                  Ready to secure your next harvest?
+                </h2>
+                <p class="text-[#2B3A22] text-lg mt-4 max-w-2xl">
+                  Join 50,000+ farmers worldwide who use Digital Arboretum to reduce crop loss and maximize yield efficiency.
+                </p>
+                <button class="mt-7 bg-white/90 hover:bg-white text-black font-semibold px-6 py-3 rounded-xl">
+                  Get Started Free
+                </button>
+              </div>
+
+              <div class="w-full max-w-[380px] bg-white/80 rounded-2xl p-2 border border-white/60">
+                <div class="rounded-xl overflow-hidden aspect-[16/9] bg-black">
+                  <img
+                    class="w-full h-full object-cover"
+                    src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80"
+                    alt="Mobile app preview"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-footer border-t border-borderSoft mt-10">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8 py-14 md:py-16 grid grid-cols-1 md:grid-cols-5 gap-10">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primaryDark text-base">park</span>
+              <span class="font-headline font-semibold text-[24px] leading-none">Arboretum</span>
+            </div>
+            <p class="text-textMuted mt-5 leading-relaxed max-w-[260px]">
+              Advancing global food security through neural-enabled agronomy and community wisdom.
+            </p>
+            <div class="flex items-center gap-3 mt-6 text-textMain">
+              <span class="w-8 h-8 rounded-full bg-card border border-borderSoft flex items-center justify-center">↗</span>
+              <span class="w-8 h-8 rounded-full bg-card border border-borderSoft flex items-center justify-center">◎</span>
+              <span class="w-8 h-8 rounded-full bg-card border border-borderSoft flex items-center justify-center">◉</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-headline text-sm uppercase tracking-[0.16em] text-textMuted">Resources</h4>
+            <ul class="mt-5 space-y-3 text-[15px]">
+              <li><a class="hover:underline" href="#">Documentation</a></li>
+              <li><a class="hover:underline" href="#">API Reference</a></li>
+              <li><a class="hover:underline" href="#">Agronomy Blog</a></li>
+              <li><a class="hover:underline" href="#">Field Guides</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-headline text-sm uppercase tracking-[0.16em] text-textMuted">Company</h4>
+            <ul class="mt-5 space-y-3 text-[15px]">
+              <li><a class="hover:underline" href="#">About Us</a></li>
+              <li><a class="hover:underline" href="#">Careers</a></li>
+              <li><a class="hover:underline" href="#">Sustainability</a></li>
+              <li><a class="hover:underline" href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="bg-card rounded-3xl border border-borderSoft p-6 max-w-[320px] md:ml-auto">
+              <h4 class="font-headline font-semibold">Newsletter</h4>
+              <p class="text-textMuted text-sm mt-2">Get the latest crop alerts and diagnostic updates.</p>
+              <input
+                class="mt-4 w-full rounded-xl border border-borderSoft bg-white px-4 py-3 text-sm focus:border-primary focus:ring-primary"
+                type="email"
+                placeholder="email@field.com"
+              />
+              <button class="mt-3 w-full bg-primary hover:brightness-95 text-black font-semibold rounded-xl px-4 py-3">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8 pb-10 text-xs text-[#909898]">
+          © 2024 Digital Arboretum AI. All rights reserved. Precision technology for sustainable harvests.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scan Results | Digital Arboretum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#7f2448",
+                        "surface-container-high": "#e6e9e8",
+                        "on-tertiary-fixed": "#3f001c",
+                        "surface-container": "#eceeed",
+                        "primary-fixed": "#bcefc0",
+                        "background": "#f8faf9",
+                        "secondary-container": "#baee99",
+                        "on-background": "#191c1c",
+                        "surface-container-low": "#f2f4f3",
+                        "tertiary-container": "#b14b6f",
+                        "secondary-fixed-dim": "#a2d582",
+                        "on-tertiary-container": "#ffedf0",
+                        "outline": "#707a6c",
+                        "tertiary-fixed": "#ffd9e2",
+                        "tertiary": "#923357",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#40493d",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#00210a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e3e2",
+                        "on-secondary-fixed-variant": "#26500d",
+                        "surface": "#f8faf9",
+                        "surface-dim": "#d8dad9",
+                        "secondary": "#3d6924",
+                        "on-secondary-fixed": "#082100",
+                        "inverse-on-surface": "#eff1f0",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#22502d",
+                        "on-secondary-container": "#416d28",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1c",
+                        "surface-bright": "#f8faf9",
+                        "tertiary-fixed-dim": "#ffb1c7",
+                        "secondary-fixed": "#bdf19c",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#3a6843",
+                        "inverse-primary": "#a0d3a5",
+                        "surface-variant": "#e1e3e2",
+                        "primary": "#315f3b",
+                        "primary-fixed-dim": "#a0d3a5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#497851",
+                        "on-primary-container": "#cafece",
+                        "outline-variant": "#bfcaba",
+                        "inverse-surface": "#2e3131"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="flex min-h-screen">
+<!-- SideNavBar Shared Component -->
+<aside class="h-screen w-64 hidden md:flex flex-col sticky top-0 bg-stone-100 dark:bg-stone-900 flex flex-col p-4 gap-2">
+<div class="px-2 py-6 mb-4">
+<span class="text-lg font-black text-emerald-900 dark:text-emerald-50 font-headline">Digital Arboretum</span>
+<p class="text-[10px] text-stone-500 font-bold uppercase tracking-widest mt-1">Field Intelligence v2.4</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 transition-all duration-200 ease-in-out font-manrope text-sm font-medium" href="../dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-emerald-700 dark:text-emerald-300 rounded-lg shadow-sm font-manrope text-sm font-medium" href="../scan_upload/code.html">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+                    Scan
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 transition-all duration-200 ease-in-out font-manrope text-sm font-medium" href="../history_page/code.html">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    History
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-200 transition-all duration-200 ease-in-out font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="mt-auto pt-6 px-2 border-t border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional agronomist wearing a neutral colored outdoor vest against a soft blurred field background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGwWnZO91zCJkQWlI6CbhS5qGikA9r1cpDr7qlRdYgbz54AF6bOkQEP6_ZC_Zp-DQ8um-66hDv9ckuCJ3w5TL8AIvF9CVx0h_Gfeq-UYH8xFGR0akCo-b6bR6k65DzKKK9ZZqfaZ66xZJyqmrel9NauvdhtAe8N_83mo9t7VGKXDJJSSLr2ldq-HJtX1_rOgY_I-12tjkDlTyhnnI2PDFPtUHPeGx_Qc_2IqESd6Oduq3nMoCuVSXyMnxJ2xBwbqNHRtGDCD7w7Uk"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-emerald-900 dark:text-emerald-50">Arboretum Admin</span>
+<span class="text-xs text-stone-500">Field Lead</span>
+</div>
+</div>
+<a class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-bold text-sm shadow-md transition-all active:scale-95 text-center" href="../scan_upload/code.html">
+                    New Scan
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0 bg-surface">
+<!-- Mobile Header (Contextual TopNavBar-like element) -->
+<header class="md:hidden flex justify-between items-center px-6 py-4 bg-stone-50/80 backdrop-blur-xl sticky top-0 z-40">
+<span class="text-xl font-bold text-emerald-900 font-headline tracking-tight">Digital Arboretum</span>
+<span class="material-symbols-outlined text-emerald-800" data-icon="account_circle">account_circle</span>
+</header>
+<div class="max-w-6xl mx-auto px-6 py-8 md:py-12">
+<!-- Top Section: Header & Image -->
+<div class="flex flex-col lg:flex-row gap-8 items-start mb-12">
+<div class="flex-1 w-full">
+<div class="mb-6">
+<span class="text-primary font-bold tracking-widest text-xs uppercase mb-2 block">Diagnostic Report</span>
+<h1 class="text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-4">Scan Result</h1>
+<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+                                Our AI-driven botanical analysis has completed. We have detected biological anomalies in your potato crop sample.
+                            </p>
+</div>
+<!-- Main Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-6 bg-surface-container-lowest rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between h-40">
+<span class="text-on-surface-variant text-sm font-medium">Disease Name</span>
+<div>
+<h2 class="text-3xl font-bold text-on-surface">Late Blight</h2>
+<p class="text-xs text-on-surface-variant mt-1 italic">Phytophthora infestans</p>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant text-sm font-medium">Confidence Score</span>
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex items-baseline gap-2">
+<h2 class="text-5xl font-black text-primary">94</h2>
+<span class="text-2xl font-bold text-primary-container">%</span>
+</div>
+</div>
+<div class="md:col-span-2 p-6 bg-error-container text-on-error-container rounded-3xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-error w-12 h-12 rounded-2xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-tighter opacity-80">Action Required</p>
+<h3 class="text-2xl font-bold">High Severity Level</h3>
+</div>
+</div>
+<span class="hidden md:block material-symbols-outlined text-4xl opacity-30" data-icon="priority_high">priority_high</span>
+</div>
+</div>
+</div>
+<!-- Image Display -->
+<div class="w-full lg:w-[400px] shrink-0">
+<div class="aspect-square rounded-[2rem] overflow-hidden bg-surface-container-highest shadow-2xl relative group">
+<img alt="Uploaded potato leaf image" class="w-full h-full object-cover" data-alt="dramatic close-up of a potato leaf with dark necrotic lesions and yellowing edges, soft natural sunlight highlights the diseased texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk_CQXona7bVG9XmnbMYIqS-0zyF4RCBXFpkZtDJ3RyeEKEdigvj0KbwiYXbkw2IwK7zw36agaCW737znDPNKPFKMuVDE5sWHtqAxomjkwCgRO2j37WyzNUUTM2IY6fwOzJM9_C4g33n9egOiRh7O44ZKJKo2BquXDftzHZlUy8v-C3rBaSdtoEGvbD3pz1FrmCz5yEH8JXLcYhq-7_VsKxOmak_-CR5TZTVNXA6kja45OuV6N--rZpQqA6I4aLcgwiS3Jx4tEH4Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-6">
+<div class="flex items-center gap-2 text-white bg-black/20 backdrop-blur-md px-4 py-2 rounded-full text-xs font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+                                    Uploaded Sample #8821
+                                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Sections -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+<section class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<h3 class="font-bold text-lg">Description</h3>
+</div>
+<div class="p-8 bg-surface-container-low rounded-[2rem] min-h-[200px]">
+<p class="text-on-surface-variant leading-relaxed">
+                                Late blight is a serious disease of potato and tomato plants caused by the water mold Phytophthora infestans. It appears as irregular green-black water-soaked spots on leaves that rapidly enlarge into dark brown necrotic lesions.
+                            </p>
+</div>
+</section>
+<section class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<h3 class="font-bold text-lg">Likely Causes</h3>
+</div>
+<div class="p-8 bg-surface-container-low rounded-[2rem] min-h-[200px]">
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>
+<p class="text-on-surface-variant text-sm">Excessive humidity above 90% for prolonged periods.</p>
+</li>
+<li class="flex gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>
+<p class="text-on-surface-variant text-sm">Cool evening temperatures (10-15°C) followed by warm days.</p>
+</li>
+<li class="flex gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>
+<p class="text-on-surface-variant text-sm">Poor air circulation within the plant canopy.</p>
+</li>
+</ul>
+</div>
+</section>
+<section class="space-y-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<h3 class="font-bold text-lg">Recommended Treatment</h3>
+</div>
+<div class="p-8 bg-surface-container-low rounded-[2rem] border-2 border-primary/5 min-h-[200px]">
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                                Immediate intervention is required to save the remaining crop.
+                            </p>
+<div class="bg-surface-container-lowest p-4 rounded-2xl mb-3">
+<p class="text-xs font-bold text-primary uppercase mb-1">Step 1</p>
+<p class="text-sm text-on-surface font-medium">Remove and incinerate infected foliage immediately.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl">
+<p class="text-xs font-bold text-primary uppercase mb-1">Step 2</p>
+<p class="text-sm text-on-surface font-medium">Apply copper-based fungicides to healthy neighboring plants.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center pt-8 border-t border-outline-variant/10">
+<button class="px-10 py-5 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-extrabold text-lg shadow-xl hover:shadow-primary/20 transition-all active:scale-95 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                        Full PDF Report
+                    </button>
+<a class="px-10 py-5 border-2 border-primary/20 text-primary hover:bg-primary/5 rounded-full font-bold text-lg transition-all active:scale-95 flex items-center gap-3" href="../scan_upload/code.html">
+<span class="material-symbols-outlined" data-icon="add_a_photo">add_a_photo</span>
+                        Scan Another
+                    </a>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar Shared Component (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-white/90 dark:bg-stone-950/90 backdrop-blur-lg rounded-t-3xl md:hidden z-50 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-5 py-2" href="../dashboard/code.html">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-2xl px-5 py-2" href="../scan_upload/code.html">
+<span class="material-symbols-outlined text-2xl" data-icon="photo_camera" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-5 py-2" href="../history_page/code.html">
+<span class="material-symbols-outlined text-2xl" data-icon="cloud_done">cloud_done</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 px-5 py-2" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="text-[10px] font-bold font-manrope uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,13 @@
+flask==3.0.3
+flask-cors==4.0.1
+firebase-admin==6.6.0
+pytest==8.3.2
+werkzeug
+joblib==1.5.3
+pandas==3.0.2
+scikit-learn==1.8.0
+cloudinary==1.41.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+langchain>=0.2.0
+langchain-groq>=0.1.0

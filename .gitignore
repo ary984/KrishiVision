@@ -1,0 +1,11 @@
+backend/.venv/
+**/__pycache__/
+*.pyc
+
+# Environment variable files (may contain secrets)
+**/.env
+!**/.env.example
+
+# Firebase service account key files
+**/serviceAccountKey*.json
+**/firebase-*.json
