@@ -1,10 +1,5 @@
 # KrishiVision: Technical Documentation
 
-**Team Autonex | Summer School 2026 AI-First Hackathon (IIT Jammu x Techible x I3C-IIT Jammu)**
-**Track:** AI for Sustainability and Climate Action
-
----
-
 ## 1. Problem We Are Solving
 
 Existing plant disease detection tools stop at identifying "what disease" a plant has. They do not account for live, location-specific weather conditions that influence how urgently a farmer should act, and they rarely guide farmers toward environmentally responsible treatment options first.
