@@ -192,8 +192,20 @@ export default function ScanUpload() {
             </div>
 
             {error && (
-              <div className="bg-error-container text-on-error-container px-4 py-3 rounded-xl text-sm font-medium">
-                {error}
+              <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-2xl text-sm space-y-2">
+                <div className="flex items-start gap-2.5">
+                  <span className="material-symbols-outlined text-red-500 text-xl shrink-0">error</span>
+                  <div className="flex-1">
+                    <p className="font-semibold text-red-900">Upload / Prediction Error</p>
+                    <p className="text-red-700 mt-1 leading-relaxed">{error}</p>
+                    {error.toLowerCase().includes('backend') && (
+                      <div className="mt-2.5 pt-2.5 border-t border-red-200/60 text-xs text-red-600 bg-red-100/50 p-2 rounded-lg font-mono">
+                        Quick fix: Open a terminal in <span className="font-bold">backend</span> and run: <br />
+                        <span className="font-bold text-red-800">python -m app.server</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             )}
 

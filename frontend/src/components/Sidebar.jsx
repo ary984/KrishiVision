@@ -1,4 +1,6 @@
+import { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { checkBackendHealth } from '../api/client'
 
 const navItems = [
   { to: '/dashboard', icon: 'dashboard', label: 'Dashboard', exact: true },
@@ -9,6 +11,22 @@ const navItems = [
 ]
 
 const Sidebar = () => {
+  const [backendOnline, setBackendOnline] = useState(null)
+
+  useEffect(() => {
+    let mounted = true
+    const check = async () => {
+      const res = await checkBackendHealth()
+      if (mounted) setBackendOnline(res.connected)
+    }
+    check()
+    const interval = setInterval(check, 10000)
+    return () => {
+      mounted = false
+      clearInterval(interval)
+    }
+  }, [])
+
   return (
     <aside className="h-screen w-64 hidden md:flex flex-col bg-stone-100 p-4 gap-2 fixed left-0 top-0 overflow-y-auto z-40">
       <Link to="/dashboard" className="mb-8 px-2 block no-underline">
@@ -39,7 +57,17 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      <div className="mt-auto p-4 bg-surface-container-low rounded-2xl flex items-center gap-3">
+      {/* Backend Status indicator */}
+      <div className="px-3 py-2.5 rounded-xl bg-white/80 border border-stone-200/80 flex items-center justify-between text-xs mb-2">
+        <div className="flex items-center gap-2">
+          <span className={`w-2 h-2 rounded-full ${backendOnline === true ? 'bg-emerald-500 ring-2 ring-emerald-200 animate-pulse' : backendOnline === false ? 'bg-amber-500 ring-2 ring-amber-200' : 'bg-stone-300'}`} />
+          <span className="font-semibold text-stone-600">
+            {backendOnline === true ? 'API Connected' : backendOnline === false ? 'API Offline (Port 5000)' : 'Checking API...'}
+          </span>
+        </div>
+      </div>
+
+      <div className="p-4 bg-surface-container-low rounded-2xl flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden flex items-center justify-center">
           <span className="material-symbols-outlined text-on-surface-variant">person</span>
         </div>

@@ -11,6 +11,13 @@ from werkzeug.utils import secure_filename
 from .firebase_service import FirebaseService
 from .model_service import ModelService
 
+from dotenv import load_dotenv
+
+# Load backend/.env if available
+_env_path = Path(__file__).resolve().parents[1] / ".env"
+if _env_path.exists():
+    load_dotenv(_env_path)
+
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "heic", "heif"}
 logger = logging.getLogger(__name__)
 MODULE_PATH = Path(__file__).resolve().parents[2] / "ml-model" / "classifier.py"
@@ -48,7 +55,12 @@ def _load_tabular_predictor():
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    CORS(app, origins=os.getenv("CORS_ORIGINS", "http://localhost:5173"))
+    raw_origins = os.getenv("CORS_ORIGINS", "*").strip()
+    if raw_origins == "*" or not raw_origins:
+        allowed_origins = "*"
+    else:
+        allowed_origins = [orig.strip() for orig in raw_origins.split(",") if orig.strip()]
+    CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
 
     model_service = ModelService()
     firebase_service = FirebaseService()

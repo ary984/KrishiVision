@@ -55,21 +55,29 @@ class FirebaseService:
             logger.warning("GOOGLE_APPLICATION_CREDENTIALS not set — Firebase Firestore disabled")
             return None, None
 
+        if not os.path.exists(credentials_path):
+            logger.warning("GOOGLE_APPLICATION_CREDENTIALS points to missing file '%s' — Firebase disabled", credentials_path)
+            return None, None
+
         try:
-            app = firebase_admin.get_app()
-        except ValueError:
-            app = firebase_admin.initialize_app(
-                credentials.Certificate(credentials_path),
-                {"storageBucket": bucket_name} if bucket_name else {}
-            )
+            try:
+                app = firebase_admin.get_app()
+            except ValueError:
+                app = firebase_admin.initialize_app(
+                    credentials.Certificate(credentials_path),
+                    {"storageBucket": bucket_name} if bucket_name else {}
+                )
 
-        client = firestore.client(app=app)
-        bucket = storage.bucket(app=app) if bucket_name else None
+            client = firestore.client(app=app)
+            bucket = storage.bucket(app=app) if bucket_name else None
 
-        if not bucket_name:
-            logger.info("FIREBASE_STORAGE_BUCKET not set — using Cloudinary or fallback for image uploads")
+            if not bucket_name:
+                logger.info("FIREBASE_STORAGE_BUCKET not set — using Cloudinary or fallback for image uploads")
 
-        return client, bucket
+            return client, bucket
+        except Exception:
+            logger.exception("Failed to initialize Firebase SDK — Firestore disabled")
+            return None, None
 
     @property
     def enabled(self) -> bool:
